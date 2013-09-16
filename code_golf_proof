@@ -1,0 +1,10 @@
+krzysztof@krzysztof-laptop:~/golf$ cat golf.erl 
+
+-define(C(X),erlang:list_to_integer(X)).
+main([X])->[A,B,C]=string:tokens(X,","),D=?C(B),E=?C(C),if D==1->V=string:len(A);true->V=erlang:list_to_integer(A,D)end,if E==1->p(V);true->io:format("~s\n",[erlang:integer_to_list(V,E)])end.
+p(N)->if N==0->io:format("\n");true->io:format("~s",["1"]),p(N-1)end.
+krzysztof@krzysztof-laptop:~/golf$ which escript
+/usr/bin/escript
+krzysztof@krzysztof-laptop:~/golf$ escript golf.erl ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ,36,10
+11856256217000761133249302542188159231749687370958039708207752192642025820822770528307559426132141591578133762963225828637624034458822090066222655331106815
+
